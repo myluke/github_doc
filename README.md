@@ -54,7 +54,7 @@
     │   └── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/mysql_reference_56/ref_56.md" target="_self">ref_56.md</a>
     └── <strong>standard</strong>
         └── <strong>MySQL</strong>
-            ├── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/standard/MySQL/Anjuke DB 操作规范.ppt" target="_self">Anjuke DB 操作规范.ppt</a>
+            ├── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/standard/MySQL/DB_rule.ppt" target="_self">DB_rule.ppt</a>
             ├── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/standard/MySQL/how_to_archive.md" target="_self">how_to_archive.md</a>
             ├── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/standard/MySQL/how_to_backup_recovery.md" target="_self">how_to_backup_recovery.md</a>
             ├── <a href="https://github.com/Keithlan/github_doc/blob/master/mysql/standard/MySQL/how_to_use_SQL.md" target="_self">how_to_use_SQL.md</a>
