@@ -8,9 +8,13 @@
 
 ![db](image/up_1.png "db")
 
-### 切换前的DB架构
+### 切换前的DB架构--上
 
 ![db](image/up_2.png "db")
+
+### 切换前的DB架构--下
+
+![db](image/up_2_2.png "db")
 
 ### 切换后的DB架构
 
