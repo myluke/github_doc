@@ -174,6 +174,15 @@ tshark -r xx.tcpdump -d tcp.port==3306,mysql -T fields -e mysql.schema  -e frame
 FROM: http://www.cnblogs.com/qq78292959/p/3637135.html
 
 
+* 最常用的到处命令
+
+```
+* 导出某个库某个表，不加锁
+
+mysqldump  -uroot -p -h xx  --skip-lock-tables –-skip-add-locks --skip-lock-all-tables  --databases test_db --tables test_table 
+
+```
+
 * 在线导出master数据
 
 /usr/local/mysql/bin/mysqldump -uxx -pxx --master-data --single-transaction -A > bakup_${date}.sql
