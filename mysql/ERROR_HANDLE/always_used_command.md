@@ -36,6 +36,21 @@ select user ,count(*) as count from information_schema.PROCESSLIST where COMMAND
 
 ## performance_schema相关
 
+
+### TOP SQL 相关
+
+* **查询最多的TopN SQL**
+
+```
+select SCHEMA_NAME,DIGEST_TEXT,COUNT_STAR,LAST_SEEN  from performance_schema.events_statements_summary_by_digest where DIGEST_TEXT like 'select%' and DIGEST_TEXT not like '%SESSION%' order by COUNT_STAR desc limit 10\G
+```
+
+* **写入最多的TopN SQL**
+
+```
+select SCHEMA_NAME,DIGEST_TEXT,COUNT_STAR,LAST_SEEN  from performance_schema.events_statements_summary_by_digest where DIGEST_TEXT like 'insert%' or DIGEST_TEXT like 'update%'or DIGEST_TEXT like 'delete%' or DIGEST_TEXT like 'replace%'  order by COUNT_STAR desc limit 10\G
+```
+
 ### Table IO 相关的监控
 
 #### 库级别
