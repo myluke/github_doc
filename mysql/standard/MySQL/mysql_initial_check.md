@@ -43,6 +43,35 @@ yum install wireshark -y;
 2) libaio-devel，zlib-devel，openssl-devel，libevent-devel，perl-Socket6，perl-Time-HiRes
 ```
 
+## online mysql check by daily
+
+```
+* my.cnf : read_only=on
+
+* my.cnf : wait_timeout=60,interactive_timeout=60; 这两值必须一样，否则以interactive_timeout为主 
+原理
+1. wait_timeout & interactive_timeout 只针对sleep状态的链接有效。
+2. sleep=10 ， 并不是代表这个链接闲置了 10秒，而表示query+sleep的总和。	
+	 例如： sleep（10s => show processlits看到的） = query（1s => 执行query的时间） + sleep（9s => 真实sleep的时间）
+	 
+3. 假设：wait_timeout & interactive_timeout = 10s （简称变量$time_out）
+   那么：什么时候会被自动killed 呢？
+   
+   情景1：Query（3s）+ Sleep（$time_out=10s） = Sleep（13秒 show processlits看到的） -- 会被kill掉
+   
+   情景2：Query（15s）+ Sleep（$time_out=10s） = Sleep（25秒 show processlits看到的）-- 会被kill掉
+
+
+
+* master影响io的参数(酌情处理)
+	sync_binlog = N;
+	innodb_flush_logs_at_trx_commit={0|1|2}
+
+* slave影响io的参数（酌情处理）
+	sync_relay_log =N;
+	innodb_flush_logs_at_trx_commit={0|1|2}
+```
+
 ## MySQL 配置文件
 
 
